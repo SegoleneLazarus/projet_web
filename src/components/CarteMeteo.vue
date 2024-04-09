@@ -23,13 +23,15 @@ import { fetchWeather } from '../service/api/weatherRepository.js';
 
         <Date/>
         <ResultatsMeteo v-if="dataWeather.main" :weather="dataWeather"></ResultatsMeteo>
-        <button v-if="dataWeather.main" :weather="dataWeather" @click="addCityToSaved">Enregistrer</button>
+
+        <a v-if="dataWeather.main" :weather="dataWeather" @click="addCityToSaved">Enregistrer</a>
 
         <div v-if="savedCities.length > 0">
             <h2>Villes enregistrées :</h2>
-            <div v-for="(city, index) in savedCities" :key="index">
-                <p>{{ city }}</p>
-                <button @click="removeCity(index)">X</button>
+            <div v-for="(city, index) in savedCities" :key="index" >
+                <p>{{ city }} <a @click="removeCity(index)">Supprimer</a></p>
+                <!-- <p>{{ city.weather.temp }}</p> -->
+                <!-- TODO récupérer les données de getWeatherData -->
             </div>
         </div>
 

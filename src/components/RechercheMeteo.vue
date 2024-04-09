@@ -22,10 +22,7 @@
     name: 'rechercheMeteo',
     data(){
       return{
-        api_key:'276c7be2977ccd817a700b194495fb74',
-        url_base: 'https://api.openweathermap.org/data/2.5/',
-        query:'',
-        weather:{}
+        
       }
     },
     methods:{
