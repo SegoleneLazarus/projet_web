@@ -4,7 +4,7 @@
   
     <main>
 
-      <carteMeteo/>
+      <AppHolder/>
       
     </main>
     
@@ -14,11 +14,11 @@
 
 <script type="module">
 
-  import carteMeteo from './components/CarteMeteo.vue';
+  import AppHolder from './components/AppHolder.vue';
 
   export default{
     name:"app",
-    components: { carteMeteo }
+    components: { AppHolder }
   }
 
 </script>

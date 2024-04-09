@@ -3,14 +3,14 @@
         
         <div class="weather_wrap">
             <div class="location-box">
-            <div class="location">{{ weather.name }}, {{ weather.sys.country }}</div>
+                <div class="location">{{ weather.name }}, {{ weather.sys.country }}</div>
             </div>
 
             <div class="weather-box">
-            <div class="temp">{{ Math.round(weather.main.temp) }}°C</div>
-            <div class="weather">{{ weather.weather[0].main }}</div>
+                <div class="temp">{{ Math.round(weather.main.temp) }}°C</div>
+                <div class="weather">{{ weather.weather[0].main }}</div>
             </div>
-      </div>
+        </div>
       
     </div>
 </template>
