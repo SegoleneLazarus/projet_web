@@ -11,36 +11,49 @@
                 <div class="weather">{{ weather.weather[0].main }}</div>
             </div>
         </div>
+
+        <a @click="addCityToSaved(weather.name, Math.round(weather.main.temp))">Enregistrer</a>
       
     </div>
 </template>
 
 
 <script>
-import { ref } from 'vue';
+
+import { onUpdated, ref, watch } from 'vue';
+
 export default {
-    name: 'resultatsMeteo',
-    props: {
-        weather: { type: Promise, type: Object, required: true },
-    },
-    mounted(){
+  name: 'ResultatMeteo',
+  props:{
+    ville: String,
+    weather: { type: Promise, type: Object, required: true },
+  },
+  mounted(){
         console.log("mounted");
         console.log(this.weather);
     },
-    // data(){
-    //     const localStorageKey = 'savedCities';
-    //     return {
-    //         savedCities: ref(JSON.parse(localStorage.getItem(localStorageKey)) || []),
-    //     }
-    // },
-    // methods:{
-    //     addCityToSaved() { //vérifier les majuscules
-    //         if (this.query && !this.savedCities.includes(this.query)) {
-    //             this.savedCities.push(this.query);
-    //             localStorage.setItem(localStorageKey, JSON.stringify(this.savedCities));
-    //             this.query = ''; // Clear the input field after adding the city
-    //         }
-    //     },
-    // }
-}
+    data(){
+        const localStorageKey = 'savedCities';
+        return {
+            savedCities: JSON.parse(localStorage.getItem('savedCities')) || []
+        }
+    },
+    methods:{
+        addCityToSaved(cityName, tempNumber) {
+            if (!this.savedCities.some(city => city.name == cityName)) {
+                this.savedCities.push({name:cityName, temp:tempNumber});
+                localStorage.setItem('savedCities', JSON.stringify(this.savedCities));
+            }
+        },
+        removeCity(index) {
+            this.savedCities.splice(index, 1);
+            localStorage.setItem(localStorageKey, JSON.stringify(this.savedCities));
+        },
+        onUpdateSaveCity() {
+            this.$emit("update:getDataWeather", this.query);
+        }
+    }
+};
+
+
 </script>

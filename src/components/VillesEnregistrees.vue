@@ -1,12 +1,12 @@
 <template>
     <div id="villesEnregistrees">
-        <div v-if="savedCities.length > 0">
-            <h2>Villes enregistrées :</h2>
-            <div v-for="(city, index) in savedCities" :key="index">
-                <p>{{ city }}</p>
-                <button @click="removeCity(index)">X</button>
+            <div v-if="savedCities.length > 0">
+                <h2>Villes enregistrées :</h2>
+                <div v-for="(city, index) in savedCities" :key="index">
+                    <p>{{ city.name }} {{ city.temp }}</p>
+                    <button @click="removeCity(index)">X</button>
+                </div>
             </div>
-        </div>
     </div>
 </template>
 

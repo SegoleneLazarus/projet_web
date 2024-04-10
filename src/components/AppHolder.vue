@@ -10,24 +10,39 @@ import { fetchWeather } from '../service/api/weatherRepository.js';
 
 </script>
 
-
 <template>
     <div id="AppHolder">
         <Header></Header>
-        <carteMeteo></carteMeteo>
+        <carteMeteo @update:getDataWeather="handleNouvelleVille"></carteMeteo>
+        <ResultatsMeteo v-if="dataWeather.main" :weather="dataWeather" :ville="ville"></ResultatsMeteo>
+        <villesEnregistrees></villesEnregistrees>
         <Footer></Footer>
     </div>
 </template>
 
 
 <script>
-    export default {
-    name: 'AppHolder',
-    methods:{
-        async getDataWeather(){ 
-            this.dataWeather = await fetchWeather(this.query);
-            console.log(this.dataWeather);
+    import { ref } from 'vue';
+    
+    export default { 
+        name:'AppHolder',
+        data(){
+            return{
+                 dataWeather : {},
+                ville : "",
+            }
+           
         },
-    }
+        methods:{
+            handleNouvelleVille(nouvelleVille) {
+                this.ville = nouvelleVille;
+                this.getDataWeather();
+            },
+            async getDataWeather() {
+                this.dataWeather = await fetchWeather(this.ville);
+                console.log(this.dataWeather);
+            },
+
+        }
     }
 </script>
