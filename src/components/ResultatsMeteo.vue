@@ -42,6 +42,7 @@ export default {
         addCityToSaved(cityName, tempNumber) {
             if (!this.savedCities.some(city => city.name == cityName)) {
                 this.savedCities.push({name:cityName, temp:tempNumber});
+                
                 localStorage.setItem('savedCities', JSON.stringify(this.savedCities));
             }
         },
