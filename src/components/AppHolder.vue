@@ -13,9 +13,14 @@ import { fetchWeather } from '../service/api/weatherRepository.js';
 <template>
     <div id="AppHolder">
         <Header></Header>
-        <carteMeteo @update:getDataWeather="handleNouvelleVille"></carteMeteo>
-        <ResultatsMeteo v-if="dataWeather.main" :weather="dataWeather" :ville="ville"></ResultatsMeteo>
-        <villesEnregistrees></villesEnregistrees>
+        <main>
+
+            <carteMeteo @update:getDataWeather="handleNouvelleVille"></carteMeteo>
+            <ResultatsMeteo v-if="dataWeather.main" :weather="dataWeather" :ville="ville"></ResultatsMeteo>
+            <villesEnregistrees></villesEnregistrees>
+
+        </main>
+        
         <Footer></Footer>
     </div>
 </template>

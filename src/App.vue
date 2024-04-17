@@ -1,12 +1,8 @@
 <template>
 
   <div id="app"> 
-  
-    <main>
 
       <AppHolder/>
-      
-    </main>
     
   </div>
 <!-- TODO bouton qui enregistre {{ weather.name }} dans une variable qui permettra de retrouver tous les bazards -->

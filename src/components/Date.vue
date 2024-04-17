@@ -1,6 +1,6 @@
 <template>
     <div id="date">
-        <div class="date">{{ dateBuilder() }}</div>
+        <h2 class="date">{{ dateBuilder() }}</h2>
     </div>
 </template>
 

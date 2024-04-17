@@ -22,83 +22,85 @@
  }
 
  html {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   -webkit-font-smoothing: antialiased;
  }
 
  body {
   font-family: var(--body-font);
-  background-image: url(https://wallpapershome.com/images/wallpapers/macos-big-sur-1280x720-dark-wwdc-2020-22655.jpg);
+  /* background-image: url(https://wallpapershome.com/images/wallpapers/macos-big-sur-1280x720-dark-wwdc-2020-22655.jpg); */
   background-size: cover;
   background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 2em;
-  width: 100%;
   height: 100vh;
-  @media screen and (max-width: 480px) {
+  /* @media screen and (max-width: 480px) {
    padding: 0.8em;
-  }
+  } */
  }
 
- .video-bg {
-  position: fixed;
-  right: 0;
-  top: 0;
+.img-flex{
   width: 100%;
-  height: 100%;
-  
-  video {
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-  }
- }
+  height: auto;
+}
 
- .app {
-  background-color: var(--theme-bg-color);
-  max-width: 1250px;
-  max-height: 860px;
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  position: relative;
-  width: 80vh;
-  border-radius: 14px;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  font-size: 15px;
-  font-weight: 500;
- }
+.soleil{
+  width: 5vw;
+}
  
  #header {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  height: 58px;
+  /* height: 58px; */
   width: 100%;
   border-bottom: 1px solid var(--border-color);
-  padding: 0 30px;
+  /* padding: 0 30px; */
   white-space: nowrap;
   /* @media screen and (max-width: 480px) {
    padding: 0 16px;
   } */
+}
+header{
+  display: flex;
+  align-items: center;
 }
 
 #AppHolder{
   width: 80vw;
 }
 
+main{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* //////////// CARTE METEO /////////////// */
 
+#carteMeteo {
+  background-color: var(--theme-bg-color);
+  max-width: 1250px;
+  max-height: 860px;
+  /* height: 90vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  /* overflow: hidden;
+  position: relative; */
+  /* width: 80vh; */
+  border-radius: 14px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  font-size: 15px;
+  font-weight: 500;
+ }
+
 #carteMeteo{
-  /* width: 30vw; */
+  width: 30vw;
   height: 30vh;
-  background-color: antiquewhite;
-  margin: 2%;
+  /* background-color: antiquewhite; */
+  /* margin: 2%; */
   padding: 2%;
 }
 
@@ -110,7 +112,7 @@
 }
 
 .search-bar{
-  width: 60%;
+  width: 100%;
   margin: 0 auto;
   height: 2.8rem;
   background: #f5f5f5;
@@ -149,4 +151,19 @@
 
 #weather_box{
   
+}
+
+
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 800px) {
+  main{
+    flex-direction: column;
+  }
+
+  #carteMeteo{
+    width: 70vw;
+  }
 }

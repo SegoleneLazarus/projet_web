@@ -8,6 +8,10 @@ import { fetchWeather } from '../service/api/weatherRepository.js';
 
 <template>
     <div id="carteMeteo">
+
+      <Date/>
+
+      
         <div class="search-box">
             <input 
             type="text" 
@@ -23,7 +27,7 @@ import { fetchWeather } from '../service/api/weatherRepository.js';
             
         </div>
         
-        <Date/>
+        
 
     </div>
 </template>

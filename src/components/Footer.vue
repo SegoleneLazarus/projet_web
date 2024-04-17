@@ -1,7 +1,7 @@
 <template>
     <div id="footer">
         <footer>
-            <p>footeeeeeer</p>
+            <p>par Ségolène Lazarus</p>
         </footer>        
     </div>
 </template>
