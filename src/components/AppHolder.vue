@@ -11,10 +11,10 @@ import { fetchWeather } from '../service/api/weatherRepository.js';
 </script>
 
 <template>
+    
     <div id="AppHolder">
         <Header></Header>
         <main>
-
             <carteMeteo @update:getDataWeather="handleNouvelleVille"></carteMeteo>
             <ResultatsMeteo v-if="dataWeather.main" :weather="dataWeather" :ville="ville"></ResultatsMeteo>
             <villesEnregistrees></villesEnregistrees>
